@@ -1,0 +1,82 @@
+[
+    {
+        "Id": "1",
+        "Name": "Engineering Bureau 1",
+        "email": "Aadarsh@gmail.com",
+        "role": "Normal-User",
+        "engineeringBureau": "2",
+        "scope": "Public"
+      },
+      {
+        "Id": "2",
+        "Name": "Engineering Bureau 2",
+        "email": "AIden@gmail.com",
+        "role": "Dispatcher",
+        "engineeringBureau": "1",
+        "scope": "Private"
+      },
+      {
+        "Id": "3",
+        "Name": "Engineering Bureau 3",
+        "email": "Alan@gmail.com",
+        "role": "Normal-User",
+        "engineeringBureau": "3",
+        "scope": "Public"
+      },
+      {
+        "Id": "4",
+        "Name": "Engineering Bureau 4",
+        "email": "Angel@gmail.com",
+        "role": "Dispatcher",
+        "engineeringBureau": "1",
+        "scope": "Private"
+      },
+      {
+        "Id": "5",
+        "Name": "Engineering Bureau 5",
+        "email": "Anthony@gmail.com",
+        "role": "Normal-User",
+        "engineeringBureau": "2",
+        "scope": "Public"
+      },
+      {
+        "Id": "6",
+        "Name": "Engineering Bureau 6",
+        "email": "Avery@gmail.com",
+        "role": "Operator ",
+        "engineeringBureau": "3",
+        "scope": "Public"
+      },
+      {
+        "Id": "7",
+        "Name": "Engineering Bureau 7",
+        "email": "Bryan@gmail.com",
+        "role": "Dispatcher",
+        "engineeringBureau": "1",
+        "scope": "Public"
+      },
+      {
+        "Id": "8",
+        "Name": "Engineering Bureau 8",
+        "email": "Camden@gmail.com",
+        "role": "Operator ",
+        "engineeringBureau": "2",
+        "scope": "Private"
+      },
+      {
+        "Id": "9",
+        "Name": "Engineering Bureau 9",
+        "email": "Charles@gmail.com",
+        "role": "Normal-User",
+        "engineeringBureau": "3",
+        "scope": "Public"
+      },
+      {
+        "Id": "10",
+        "Name": "Engineering Bureau 10",
+        "email": "DavId@gmail.com",
+        "role": "Operator ",
+        "engineeringBureau": "1",
+        "scope": "Private"
+      }
+    ]
