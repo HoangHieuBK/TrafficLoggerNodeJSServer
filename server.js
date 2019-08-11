@@ -15,12 +15,17 @@ app.get('/GetTrafficLogger', function (req, res) {
     });
 })
 
-app.get('/GetEngineering', function (req, res) {
-    fs.readFile("engineering.json", 'utf8', function (err, data) {
-        console.log(data);
-        res.send(data);
+app.get('/GetTrafficLogger/:id', function (req, res) {
+    fs.readFile("traffic-logger.json", 'utf8', function (err, dataJson) {
+        console.log(dataJson);
+        const data = JSON.parse(dataJson);
+        const trafficLogger = data.find(item => item.id = req.params.id);
+        if(trafficLogger) {
+            res.send(trafficLogger);
+        }
     });
 })
+
 
 app.post('/InsertTrafficLogger', function (req, res) {
     // First read existing users.
