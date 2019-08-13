@@ -8,24 +8,56 @@ app.get('/', function (req, res) {
     res.send('Hello World');
 })
 
-app.get('/GetTrafficLogger', function (req, res) {
-    fs.readFile("traffic-logger.json", 'utf8', function (err, data) {
-        console.log(data);
-        res.send(data);
-    });
-})
-
-app.get('/GetTrafficLogger/:id', function (req, res) {
+// api get list TL device
+app.get('/api/v1/devices', function (req, res) {
+    console.log('req.query', req.query);
     fs.readFile("traffic-logger.json", 'utf8', function (err, dataJson) {
-        console.log(dataJson);
-        const data = JSON.parse(dataJson);
-        const trafficLogger = data.find(item => item.id = req.params.id);
-        if(trafficLogger) {
-            res.send(trafficLogger);
+        const objectData = JSON.parse(dataJson);
+        if (req.query.deviceType == 1) {
+
+            if (req.query.deviceName) { // neu co param deviceName thi se la api search
+                objectData['data'] = objectData.data.filter((item) => {
+                    return item.name.includes(req.query.deviceName);
+                });
+
+            }
+
+
+            // neu khong co param thi se la api get list TL
+            objectData['data'] = objectData.data.filter((item) => {
+                return item.name.includes('TC')
+            });
+            res.send(objectData);
         }
     });
 })
 
+// api get detail device
+app.get('/api/v1/devices/:id', function (req, res) {
+    fs.readFile("traffic-logger.json", 'utf8', function (err, dataJson) {
+        const objectData = JSON.parse(dataJson);
+        objectData['data'] = objectData.data.filter(item => item.id === +req.params.id);
+        res.send(objectData);
+    });
+})
+
+
+app.delete('/api/v1/devices/:id', function (req, res) {
+    fs.readFile("traffic-logger.json", 'utf8', function (err, dataString) {
+        const objectData = JSON.parse(dataString)
+        const index = objectData.data.findIndex(x => x.id === +req.params.id);
+        if (index > -1) {
+            objectData.data.splice(index, 1); // xoa 1 phan tu tai vi tri index
+            fs.writeFile(__dirname + "/" + "traffic-logger.json", JSON.stringify(objectData), function (err) {
+                if (err) {
+                    res.send(err.toString());
+                }
+                objectData['data'] = objectData.data.filter(item => item.id === +req.params.id);
+                res.send(objectData);
+            })
+        }
+    });
+})
 
 app.post('/InsertTrafficLogger', function (req, res) {
     // First read existing users.
@@ -43,7 +75,7 @@ app.post('/InsertTrafficLogger', function (req, res) {
 
 app.put('/UpdateTrafficLogger', function (req, res) {
     fs.readFile("traffic-logger.json", 'utf8', function (err, dataString) {
-        const data =JSON.parse(dataString)
+        const data = JSON.parse(dataString)
         const index = data.findIndex(x => x.id === req.body.id);
         if (index > -1) {
             data[index] = req.body;
@@ -59,11 +91,11 @@ app.put('/UpdateTrafficLogger', function (req, res) {
 
 app.delete('/DeleteTrafficLogger', function (req, res) {
     fs.readFile("traffic-logger.json", 'utf8', function (err, dataString) {
-        const data =JSON.parse(dataString)
+        const data = JSON.parse(dataString)
         console.log(req.body)
         const index = data.findIndex(x => x.id === req.body.id);
         if (index > -1) {
-            data.splice(index,1); // xoa 1 phan tu tai vi tri index
+            data.splice(index, 1); // xoa 1 phan tu tai vi tri index
             fs.writeFile(__dirname + "/" + "traffic-logger.json", JSON.stringify(data), function (err) {
                 if (err) {
                     res.send(err.toString());
