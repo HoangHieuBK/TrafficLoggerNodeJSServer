@@ -41,7 +41,7 @@ app.get('/api/v1/devices/:id', function (req, res) {
     });
 })
 
-
+// api delete TL device
 app.delete('/api/v1/devices/:id', function (req, res) {
     fs.readFile("traffic-logger.json", 'utf8', function (err, dataString) {
         const objectData = JSON.parse(dataString)
@@ -58,6 +58,69 @@ app.delete('/api/v1/devices/:id', function (req, res) {
         }
     });
 })
+/*============================================================================================================================*/
+// api get alert list
+app.get('/api/v1/traffic/alertrules', function (req, res) {
+    fs.readFile("traffic-alert.json", 'utf8', function (err, dataJson) {
+        if (dataJson) {
+            res.send(dataJson);
+        }
+    });
+})
+
+
+// api create alert 
+app.post('/api/v1/traffic/alertrules', function (req, res) {
+    // First read existing users.
+    fs.readFile(__dirname + "/" + "traffic-alert.json", 'utf8', function (err, dataJson) {
+        var objectData = JSON.parse(dataJson);
+        objectData.data.unshift(req.body);
+        fs.writeFile(__dirname + "/" + "traffic-alert.json", JSON.stringify(objectData), function (err) {
+            if (err) {
+                res.send(err.toString());
+            }
+            res.json('Success');
+        })
+    });
+})
+
+
+// api update alert
+app.put('/api/v1/traffic/alertrules/:id', function (req, res) {
+    fs.readFile("traffic-alert.json", 'utf8', function (err, dataString) {
+        const objectData = JSON.parse(dataString)
+        const index = objectData.data.findIndex(x => x.id === +req.params.id);
+        if (index > -1) {
+            objectData.data[index] = req.body;
+            fs.writeFile(__dirname + "/" + "traffic-alert.json", JSON.stringify(objectData), function (err) {
+                if (err) {
+                    res.send(err.toString());
+                }
+                res.json('Success');
+            })
+        }
+    });
+})
+
+// api delete alert
+app.delete('/api/v1/traffic/alertrules/:id', function (req, res) {
+    fs.readFile("traffic-alert.json", 'utf8', function (err, dataString) {
+        const objectData = JSON.parse(dataString)
+        const index = objectData.data.findIndex(x => x.id === +req.params.id);
+        if (index > -1) {
+            objectData.data.splice(index, 1); // xoa 1 phan tu tai vi tri index
+            fs.writeFile(__dirname + "/" + "traffic-alert.json", JSON.stringify(objectData), function (err) {
+                if (err) {
+                    res.send(err.toString());
+                }
+                objectData['data'] = objectData.data.filter(item => item.id === +req.params.id);
+                res.send(objectData);
+            })
+        }
+    });
+})
+
+/*============================================================================================================================*/
 
 app.post('/InsertTrafficLogger', function (req, res) {
     // First read existing users.
