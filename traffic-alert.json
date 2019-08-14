@@ -1,1 +1,221 @@
-{"timestamp":"2019-07-25T07:04:34.967+0000","status":{"error":false,"code":200,"type":"success","message":"Success"},"error":[],"data":[{"description":"from 60 – 90 km/h","min":60,"max":90,"level":4,"color":"#FFF"},{"id":1,"description":"from 50 – 80 km/h","min":50,"max":80,"level":5,"color":"#FFF"},{"id":2,"description":"from 50 – 80 km/h","min":50,"max":80,"level":5,"color":"#FFF"},{"id":3,"description":"from 50 – 80 km/h","min":50,"max":80,"level":5,"color":"#FFF"},{"id":4,"description":"from 50 – 80 km/h","min":50,"max":80,"level":5,"color":"#FFF"},{"id":5,"description":"from 50 – 80 km/h","min":50,"max":80,"level":5,"color":"#FFF"},{"id":6,"description":"from 50 – 80 km/h","min":50,"max":80,"level":5,"color":"#FFF"},{"id":7,"description":"from 50 – 80 km/h","min":50,"max":80,"level":5,"color":"#FFF"},{"id":8,"description":"from 50 – 80 km/h","min":50,"max":80,"level":5,"color":"#FFF"},{"id":9,"description":"from 50 – 80 km/h","min":50,"max":80,"level":5,"color":"#FFF"},{"id":10,"description":"from 50 – 80 km/h","min":50,"max":80,"level":5,"color":"#FFF"},{"id":11,"description":"from 50 – 80 km/h","min":50,"max":80,"level":5,"color":"#FFF"},{"id":12,"description":"from 50 – 80 km/h","min":50,"max":80,"level":5,"color":"#FFF"},{"id":13,"description":"from 50 – 80 km/h","min":50,"max":80,"level":5,"color":"#FFF"},{"id":14,"description":"from 50 – 80 km/h","min":50,"max":80,"level":5,"color":"#FFF"},{"id":15,"description":"from 50 – 80 km/h","min":50,"max":80,"level":5,"color":"#FFF"},{"id":16,"description":"from 50 – 80 km/h","min":50,"max":80,"level":5,"color":"#FFF"},{"id":17,"description":"from 50 – 80 km/h","min":50,"max":80,"level":5,"color":"#FFF"},{"id":18,"description":"from 50 – 80 km/h","min":50,"max":80,"level":5,"color":"#FFF"},{"id":19,"description":"from 50 – 80 km/h","min":50,"max":80,"level":5,"color":"#FFF"},{"id":20,"description":"from 50 – 80 km/h","min":50,"max":80,"level":5,"color":"#FFF"}],"path":"/traffic/alertRules"}
+{
+    "timestamp": "2019-07-25T07:04:34.967+0000",
+    "status": {
+        "error": false,
+        "code": 200,
+        "type": "success",
+        "message": "Success"
+    },
+    "error": [],
+    "data": [
+        {
+            "id": 1,
+            "description": "from 50 – 80 km/h",
+            "min": 50,
+            "max": 80,
+            "level": 5,
+            "color": "#FFF"
+        },
+        {
+            "id": 2,
+            "description": "from 50 – 80 km/h",
+            "min": 50,
+            "max": 80,
+            "level": 5,
+            "color": "#FFF"
+        },
+        {
+            "id": 3,
+            "description": "from 50 – 80 km/h",
+            "min": 50,
+            "max": 80,
+            "level": 5,
+            "color": "#FFF"
+        },
+        {
+            "id": 4,
+            "description": "from 50 – 80 km/h",
+            "min": 50,
+            "max": 80,
+            "level": 5,
+            "color": "#FFF"
+        },
+        {
+            "id": 5,
+            "description": "from 75 – 95 km/h",
+            "min": 75,
+            "max": 95,
+            "level": 4,
+            "color": "#FFF"
+        },
+        {
+            "id": 6,
+            "description": "from 60 – 90 km/h",
+            "min": 60,
+            "max": 90,
+            "level": 4,
+            "color": "#FFF"
+        },
+        {
+            "id": 7,
+            "description": "from 50 – 80 km/h",
+            "min": 50,
+            "max": 80,
+            "level": 5,
+            "color": "#FFF"
+        },
+        {
+            "id": 10,
+            "description": "from 50 – 80 km/h",
+            "min": 50,
+            "max": 80,
+            "level": 5,
+            "color": "#FFF"
+        },
+        {
+            "id": 11,
+            "description": "from 50 – 80 km/h",
+            "min": 50,
+            "max": 80,
+            "level": 5,
+            "color": "#FFF"
+        },
+        {
+            "id": 12,
+            "description": "from 50 – 80 km/h",
+            "min": 50,
+            "max": 80,
+            "level": 5,
+            "color": "#FFF"
+        },
+        {
+            "id": 13,
+            "description": "from 50 – 80 km/h",
+            "min": 50,
+            "max": 80,
+            "level": 5,
+            "color": "#FFF"
+        },
+        {
+            "id": 14,
+            "description": "from 50 – 80 km/h",
+            "min": 50,
+            "max": 80,
+            "level": 5,
+            "color": "#FFF"
+        },
+        {
+            "id": 15,
+            "description": "from 50 – 80 km/h",
+            "min": 50,
+            "max": 80,
+            "level": 5,
+            "color": "#FFF"
+        },
+        {
+            "id": 16,
+            "description": "from 50 – 80 km/h",
+            "min": 50,
+            "max": 80,
+            "level": 5,
+            "color": "#FFF"
+        },
+        {
+            "id": 17,
+            "description": "from 50 – 80 km/h",
+            "min": 50,
+            "max": 80,
+            "level": 5,
+            "color": "#FFF"
+        },
+        {
+            "id": 18,
+            "description": "from 50 – 80 km/h",
+            "min": 50,
+            "max": 80,
+            "level": 5,
+            "color": "#FFF"
+        },
+        {
+            "id": 19,
+            "description": "from 50 – 80 km/h",
+            "min": 50,
+            "max": 80,
+            "level": 5,
+            "color": "#FFF"
+        },
+        {
+            "id": 20,
+            "description": "from 50 – 80 km/h",
+            "min": 50,
+            "max": 80,
+            "level": 5,
+            "color": "#FFF"
+        },
+        {
+            "id": 19,
+            "description": "from 100 – 200 km/h",
+            "min": 100,
+            "max": 200,
+            "level": 3,
+            "color": "#FFF"
+        },
+        {
+            "id": 20,
+            "description": "from 100 – 200 km/h",
+            "min": 100,
+            "max": 200,
+            "level": 3,
+            "color": "#FFF"
+        },
+        {
+            "id": 21,
+            "description": "from 100 – 200 km/h",
+            "min": 100,
+            "max": 200,
+            "level": 3,
+            "color": "#FFF"
+        },
+        {
+            "id": 22,
+            "description": "from 100 – 200 km/h",
+            "min": 100,
+            "max": 200,
+            "level": 3,
+            "color": "#FFF"
+        },
+        {
+            "id": 23,
+            "description": "from 100 – 200 km/h",
+            "min": 100,
+            "max": 200,
+            "level": 3,
+            "color": "#FFF"
+        },
+        {
+            "id": 24,
+            "description": "from 100 – 200 km/h",
+            "min": 100,
+            "max": 200,
+            "level": 3,
+            "color": "#FFF"
+        },
+        {
+            "id": 25,
+            "description": "from 100 – 200 km/h",
+            "min": 100,
+            "max": 200,
+            "level": 3,
+            "color": "#FFF"
+        },
+        {
+            "id": 26,
+            "description": "from 100 – 200 km/h",
+            "min": 100,
+            "max": 200,
+            "level": 3,
+            "color": "#FFF"
+        }
+    ],
+    "path": "/traffic/alertRules"
+}

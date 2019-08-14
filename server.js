@@ -10,7 +10,6 @@ app.get('/', function (req, res) {
 
 // api get list TL device
 app.get('/api/v1/devices', function (req, res) {
-    console.log('req.query', req.query);
     fs.readFile("traffic-logger.json", 'utf8', function (err, dataJson) {
         const objectData = JSON.parse(dataJson);
         if (req.query.deviceType == 1) {
@@ -21,8 +20,6 @@ app.get('/api/v1/devices', function (req, res) {
                 });
 
             }
-
-
             // neu khong co param thi se la api get list TL
             objectData['data'] = objectData.data.filter((item) => {
                 return item.name.includes('TC')
@@ -54,6 +51,8 @@ app.delete('/api/v1/devices/:id', function (req, res) {
                 }
                 objectData['data'] = objectData.data.filter(item => item.id === +req.params.id);
                 res.send(objectData);
+
+                // res.json('success')
             })
         }
     });
@@ -74,7 +73,11 @@ app.post('/api/v1/traffic/alertrules', function (req, res) {
     // First read existing users.
     fs.readFile(__dirname + "/" + "traffic-alert.json", 'utf8', function (err, dataJson) {
         var objectData = JSON.parse(dataJson);
-        objectData.data.unshift(req.body);
+        const alert = {
+            id: objectData.data.length + 1,
+            ...req.body
+        };
+        objectData.data.push(alert);
         fs.writeFile(__dirname + "/" + "traffic-alert.json", JSON.stringify(objectData), function (err) {
             if (err) {
                 res.send(err.toString());
@@ -113,8 +116,9 @@ app.delete('/api/v1/traffic/alertrules/:id', function (req, res) {
                 if (err) {
                     res.send(err.toString());
                 }
-                objectData['data'] = objectData.data.filter(item => item.id === +req.params.id);
-                res.send(objectData);
+                res.json('Success');
+                // objectData['data'] = objectData.data.filter(item => item.id === +req.params.id);
+                // res.send(objectData);
             })
         }
     });
